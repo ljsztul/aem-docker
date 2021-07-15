@@ -167,3 +167,6 @@ typings/
 
 # Mac
 .DS_Store
+
+# License purpose
+/aem-base_image/license.properties
