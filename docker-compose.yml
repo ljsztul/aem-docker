@@ -1,12 +1,23 @@
-version: '1'
+version: '3.8'
 services:
   author:
     image: aem-author
     build: aem-author
     ports:
       - "4502:4502"
+    networks:
+      customnetwork:
+        ipv4_address: 172.20.0.5
   publish:
     image: aem-publish
     build: aem-publish
     ports:
       - "4503:4503"
+    networks:
+      customnetwork:
+        ipv4_address: 172.20.0.6
+networks:
+  customnetwork:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
