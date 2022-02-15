@@ -5,6 +5,9 @@ services:
     build: aem-author
     ports:
       - "4502:4502"
+    volumes:
+      - ./aem-author/server-logs:/opt/aem/crx-quickstart/logs:delegated
+      - aem-author-repository:/opt/aem/crx-quickstart/repository
     networks:
       customnetwork:
         ipv4_address: 172.20.0.5
@@ -13,9 +16,17 @@ services:
     build: aem-publish
     ports:
       - "4503:4503"
+    volumes:
+      - ./aem-publish/server-logs:/opt/aem/crx-quickstart/logs:delegated
+      - aem-publish-repository:/opt/aem/crx-quickstart/repository
     networks:
       customnetwork:
         ipv4_address: 172.20.0.6
+volumes:
+  aem-author-repository:
+    name: aem-author-repository
+  aem-publish-repository:
+    name: aem-publish-repository
 networks:
   customnetwork:
     ipam:
