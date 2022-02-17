@@ -13,3 +13,4 @@
 Optional for run individually each AEM Server
 * Run `docker build -t aem-author .` in the ~/aem-author folder
 * Run `docker build -t aem-publish .` in the ~/aem-publish folder
+* If you need to use Java 8, is necessary to change the aem-base_image/Dockerfile and replace `apt-get install -y openjdk-11-jdk` for `apt-get install -y openjdk-8-jdk`

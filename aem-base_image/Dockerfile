@@ -19,16 +19,14 @@ COPY cq-quickstart-6.5.0.jar cq-quickstart.jar
 # Install Java
 RUN apt-get update && \
     apt-get install -y curl && \
-    apt-get install -y bash-completion && \
     apt-get install -y sudo && \
     apt-get install -y vim && \
-    apt-get install -y httpd && \
     apt-get install -y wget && \
     apt-get install -y zip && \
     apt-get install -y software-properties-common && \
     add-apt-repository ppa:openjdk-r/ppa && \
     apt-get update && \
-    apt-get install -y openjdk-8-jdk
+    apt-get install -y openjdk-11-jdk
 
 # Unack the Jar file
 RUN java -jar cq-quickstart.jar -unpack
