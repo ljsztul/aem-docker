@@ -92,6 +92,9 @@ yarn.lock
 build/
 dist/
 
+ # Cache
+cache/
+
 # Frontend Maven Plugin
 node/
 

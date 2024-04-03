@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  dispatcher:
+    image: aem-dispatcher
+    build: aem-dispatcher
+    ports:
+      - "8080:80"
+    volumes:
+      - ./server-logs:/var/log/apache2:delegated
+      - ./cache:/var/www/html:delegated
+volumes:
+  aem-dispatcher-repository:
+    name: aem-dispatcher-repository
