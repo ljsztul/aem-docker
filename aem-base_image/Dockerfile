@@ -16,7 +16,7 @@ COPY license.properties .
 # YOU NEED TO CHANGE THE VERSION BASED ON WHICH ONE YOU NEED
 COPY cq-quickstart-6.5.0.jar cq-quickstart.jar
 
-# Install Java
+# Install Java and other tools
 RUN apt-get update && \
     apt-get install -y curl && \
     apt-get install -y sudo && \
