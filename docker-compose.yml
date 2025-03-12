@@ -29,6 +29,7 @@ volumes:
     name: aem-publish-repository
 networks:
   customnetwork:
+    driver: bridge  # Explicitly declare driver, default is 'bridge' anyway
     ipam:
       config:
         - subnet: 172.20.0.0/16
